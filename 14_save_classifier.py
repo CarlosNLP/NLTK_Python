@@ -60,7 +60,7 @@ for review, category in reviews:
 
 # Having the feature_sets list ready, let's create the training and testing sets
 training_set = feature_sets[:1900] # 1,900 reviews previously shuffled
-testing_set = feature_sets[:1900] # 100 reviews previously shuffled
+testing_set = feature_sets[1900:] # 100 reviews previously shuffled
 
 # Creating the Naive Bayes classifier
 classifier = nltk.NaiveBayesClassifier.train(training_set)
