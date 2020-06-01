@@ -31,8 +31,10 @@ class listener(StreamListener):
     def on_error(self, status):
         print(status)
 
+# Using our credentials to get the authorization and the access token
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
 
+# Applying our credentials to retrieve the filtered tweets
 twitterStream = Stream(auth, listener())
 twitterStream.filter(track=["Ireland"])
